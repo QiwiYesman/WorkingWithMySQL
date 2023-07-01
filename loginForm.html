@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+<meta charset="utf-8"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="login.js"></script>
+
+<head>
+    <title>HTML-форма</title>
+    <style>
+        html{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        button{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        input{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        form{
+            display: table;
+        }
+        label{
+            display: table-cell;
+            padding-right: 20px;
+        }
+        input{
+            display: table-cell;
+        }
+        li{
+            display: table-row;
+        }
+        ul{
+            list-style: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<form name="form" id ="form">
+    <ul>
+        <li>
+            <label for="login">Login</label>
+            <input id="login" type="text">
+        </li>
+        <li>
+            <label for="password">Password</label>
+            <input id="password" type="password">
+        </li>
+        <li>
+            <label for="group">User group</label>
+            <input id="group" type="text">
+        </li>
+        <input type="button" id="logButton" value="Ввійти">
+        <input type="button" id="regButton" value="Зареєструватися">
+    </ul>
+</form>
+<div id="output"></div>
+<div id="add"></div>
+</body>
+</html>

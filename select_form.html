@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/html">
+<meta charset="utf-8"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="column_names.js"></script>
+<script src="selecting_ajax.js"></script>
+
+<head>
+    <title>HTML-форма</title>
+    <style>
+        html{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        button{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        input{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        select{
+            font-size: 14pt;
+            font-family: "Bitstream Vera Sans";
+        }
+        form{
+            display: table;
+        }
+        label{
+            display: table-cell;
+            padding-right: 20px;
+        }
+        input{
+            display: table-cell;
+        }
+        li{
+            display: table-row;
+        }
+        ul{
+            list-style: none;
+        }
+        td{
+            padding: 10px;
+            border: black solid;
+        }
+        tr:nth-child(2n)
+        {
+            background-color: lightblue;
+        }
+        tr:nth-child(2n+1)
+        {
+            background-color: lightcyan;
+        }
+        th
+        {
+            background-color: blue;
+            color: white;
+        }
+        td input[type=button][value='Update']{
+            background-color: cyan;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 1em;
+        }
+        td input[type=button][value='Update']:hover{
+            background-color: darkcyan;
+        }
+        td input[type=button][value='Update']:active{
+            background-color: lightgreen;
+        }
+
+        td input[type=button][value='Remove']{
+            background-color: red;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 1em;
+        }
+        td input[type=button][value='Remove']:hover{
+            background-color: pink;
+        }
+        td input[type=button][value='Remove']:active{
+            background-color: lightgreen;
+        }
+
+
+    </style>
+</head>
+<body id="bbb">
+<form name="form" id ="form">
+    <ul>
+        <li>
+            <span hidden="hidden" id="userName">reader</span>
+            <label>Назва таблиці</label>
+            <select name="table_name" id="table_name">
+                <option value="Country">Country</option>
+                <option value="City">City</option>
+                <option value="Sportsman">Sportsman</option>
+                <option value="Tournament">Tournament</option>
+                <option value="TeamMember">Member of team</option>
+                <option value="Team">Team</option>
+                <option value="Title">Title</option>
+                <option value="Result">Tournament result</option>
+                <option value="SportType">Type of sport</option>
+                <option value="TeamTournament">Team tournament</option>
+            </select>
+            <input type="button" id="backupAll_button" value="Отримати резервну копію бази">
+            <input type="button" id="backupTable_button" value="Отримати резервну копію таблиці">
+        </li>
+        <input type="submit" id="submit" value="Вивести">
+        <input type="button" id="add_button" value="Створити запис">
+        <input type="button" id="find_button" value="Знайти">
+        <input type="checkbox" id="isJoined">З приєднанням
+        <li>
+            <label>Збережні процедури</label>
+            <select name="procedures" id="procedures">
+                <option value="cyberSportTournaments()">Кіберспортивні турніри</option>
+                <option value="get_cities_of_country('Ukraine')">Міста України</option>
+                <option value="GrouppedCities()">Міста за групами</option>
+                <option value="TournamentYearPassed()">Скільки років пройшло від турніру</option>
+            </select>
+            <input type="button" id="procedures_button" value="Запустити">
+        </li>
+    </ul>
+</form>
+<div id="output"></div>
+<div id="add"></div>
+</body>
+</html>
